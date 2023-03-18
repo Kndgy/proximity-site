@@ -5,3 +5,18 @@
   text-align: center;
 }
 
+.App{
+  background-color: antiquewhite;
+}
+
+.Plane{
+  border: 1px solid gray;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.Plane:hover{
+  background-color: gray;
+}
