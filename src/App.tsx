@@ -68,9 +68,9 @@ function App() {
   console.log(actorPosition)
   console.log(1 - Math.min(Math.max((actorPosition.row + actorPosition.col) / 10, 0), 1));
 
-  const controlAudio = () =>{
-    return (1 - Math.min(Math.max((actorPosition.row + actorPosition.col) / 10, 0), 1))
-  }
+  // const controlAudio = () =>{
+  //   return (1 - Math.min(Math.max((actorPosition.row + actorPosition.col) / 10, 0), 1))
+  // }
 
 
   return (
@@ -88,7 +88,9 @@ function App() {
       click 3 dot to start play
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 100px)', paddingTop:'40px' }}>
         <Actor initialCol={0} initialRow={0} embed={
-          <><ReactAudioPlayer volume={controlAudio()} src='/ballin.mp3' loop={true} autoPlay={true} controls/></>
+          <div>
+            {/* <ReactAudioPlayer volume={controlAudio()} src='/ballin.mp3' loop={true} autoPlay={true} controls/> */}
+          </div>
         }/>
         <Actor initialCol={actorPosition.col} initialRow={actorPosition.row} embed={"player"}/>
         <Plane totalGrids={58}/>
