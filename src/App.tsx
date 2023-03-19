@@ -42,7 +42,7 @@ interface ActorProps {
   embed?: ReactNode
 }
 
-function Actor({ initialRow, initialCol, embed, onMove }:ActorProps){
+function Actor({ initialRow, initialCol, embed}:ActorProps){
   return (
     <div
       className='Actor'
@@ -54,7 +54,6 @@ function Actor({ initialRow, initialCol, embed, onMove }:ActorProps){
 }
 
 function App() {
-  const [playerPosition, setPlayerPosition] = useState({ row: 0, col: 0 });
   const [actorPosition, setActorPosition] = useState({ row: 2, col: 2 });
 
   const handleBottomMove = useCallback(() => {
