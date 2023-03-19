@@ -8,20 +8,10 @@ interface PlaneProps {
 
 function Plane({totalGrids}:PlaneProps){
 
-  const handleGridClick = (row: number, col: number) => {
-    // console.log(`Clicked on grid row ${row}, col ${col}`);
-  };
-
-  // const handleGridHover = (row: number, col: number) => {
-  //   console.log(`Hovering over grid row ${row}, col ${col}`);
-  // };
 
   const grids = [];
   for (let i = 0; i < totalGrids; i++) {
-    const row = Math.floor(i / 10);
-    const col = i % 10;
     grids.push(<div
-      onClick={() => handleGridClick(row, col)}
       // onMouseEnter={() => handleGridHover(row, col)}
       className='Plane'
       key={i}
@@ -42,7 +32,7 @@ interface ActorProps {
   embed?: ReactNode
 }
 
-function Actor({ initialRow, initialCol, embed}:ActorProps){
+const Actor=({ initialRow, initialCol, embed}:ActorProps)=>{
   return (
     <div
       className='Actor'
@@ -78,13 +68,9 @@ function App() {
   console.log(actorPosition)
   console.log(1 - Math.min(Math.max((actorPosition.row + actorPosition.col) / 10, 0), 1));
 
-
-
   const controlAudio = () =>{
-    return 1 - Math.min(Math.max((actorPosition.row + actorPosition.col) / 10, 0), 1)
+    return (1 - Math.min(Math.max((actorPosition.row + actorPosition.col) / 10, 0), 1))
   }
-
-  controlAudio()
 
 
   return (
@@ -100,12 +86,6 @@ function App() {
         <button onClick={handleRightMove}>Right</button> 
       </div>
       click 3 dot to start play
-      {/* actor player
-      <div> 
-        <button>Left</button> 
-        <button>Right</button> 
-        <button>Top</button> 
-        <button>Bottom</button> </div> */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 100px)', paddingTop:'40px' }}>
         <Actor initialCol={0} initialRow={0} embed={
           <><ReactAudioPlayer volume={controlAudio()} src='/ballin.mp3' loop={true} autoPlay={true} controls/></>
