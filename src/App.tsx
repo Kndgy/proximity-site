@@ -1,6 +1,7 @@
 import { ReactNode, useCallback, useState } from 'react';
-import ReactAudioPlayer from 'react-audio-player';
+import AudioPlayer from 'react-modern-audio-player';
 import './App.css'
+import ReactAudioPlayer from './audioPLayer';
 
 interface PlaneProps {
   totalGrids: number;
@@ -72,6 +73,15 @@ function App() {
     return (1 - Math.min(Math.max((actorPosition.row + actorPosition.col) / 10, 0), 1))
   }
 
+  const playList = [
+    {
+      name: 'name',
+      writer: 'writer',
+      img: 'image.jpg',
+      src: '/ballin.mp3',
+      id: 1,
+    },
+  ]
 
   return (
     <div className="App">
