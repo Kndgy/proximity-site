@@ -1,4 +1,4 @@
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactNode, useCallback, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import './App.css'
 
